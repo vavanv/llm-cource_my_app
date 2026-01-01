@@ -28,6 +28,7 @@ export const chatController = {
 
       res.json({ message: response.message });
     } catch (error) {
+      console.error('Error in chatController.sendMessage:', error);
       res.status(500).json({ error: 'Failed to fetch response from OpenAI' });
     }
   },

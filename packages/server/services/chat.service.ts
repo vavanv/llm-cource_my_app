@@ -1,9 +1,6 @@
 import OpenAI from 'openai';
-import dotenv from 'dotenv';
 
 import { conversationRepository } from '../repositories/conversation.repository';
-
-dotenv.config();
 
 type ChatResponse = {
   id: string;
@@ -30,4 +27,3 @@ export const chatService = {
     return { id: response.id, message: response.output_text };
   },
 };
-``;
