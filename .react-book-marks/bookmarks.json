@@ -1,0 +1,18 @@
+[
+  {
+    "id": "1767290752342-2ghfzf3v6",
+    "filePath": "packages\\server\\index.ts",
+    "line": 8,
+    "character": 27,
+    "category": "reference",
+    "timestamp": 1767290752342
+  },
+  {
+    "id": "1767290758771-hrwu8590w",
+    "filePath": "packages\\server\\services\\chat.service.ts",
+    "line": 2,
+    "character": 28,
+    "category": "reference",
+    "timestamp": 1767290758771
+  }
+]
