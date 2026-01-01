@@ -14,12 +14,14 @@ const client = new OpenAI({
 // Leaky abstraction
 export const chatService = {
   sendMessage: async (prompt: string, conversationId: string): Promise<ChatResponse> => {
+    const previousResponseId = conversationRepository.getLastResponseId(conversationId);
+
     const response = await client.responses.create({
       model: 'gpt-4o',
       input: prompt,
       temperature: 0.2,
       max_output_tokens: 100,
-      previous_response_id: conversationRepository.getLastResponseId(conversationId),
+      ...(previousResponseId && { previous_response_id: previousResponseId }),
     });
 
     conversationRepository.setLastResponseId(conversationId, response.id);
